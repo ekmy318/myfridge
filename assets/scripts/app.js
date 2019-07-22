@@ -1,8 +1,7 @@
 'use strict'
 
-const userEvents = require('./user/events')
-// const userUi = require('./user/ui')
-
+const userEvents = require('./user/events.js')
+const groceryEvents = require('./grocery/events.js')
 // use require with a reference to bundle the file and use it in this file
 // const example = require('./example')
 
@@ -10,6 +9,7 @@ const userEvents = require('./user/events')
 // require('./example')
 
 $(() => {
+  groceryEvents.addHandlers()
   $('#sign-in').on('submit', userEvents.onSignIn)
   $('#sign-up').on('submit', userEvents.onSignUp)
   $('.guest').on('click', userEvents.onGuest)

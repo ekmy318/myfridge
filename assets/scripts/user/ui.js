@@ -29,7 +29,6 @@ const signUpFailure = () => {
 
 const signInSuccess = responseData => {
   store.user = responseData.user
-  successMessage('Welcome to myFridge!')
   $('#sign-in').addClass('hide')
   $('.dropdown').removeClass('hide')
 }

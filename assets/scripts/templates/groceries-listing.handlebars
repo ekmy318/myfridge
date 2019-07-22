@@ -1,0 +1,32 @@
+{{#each groceries as |grocery|}}
+  <section data-id="{{grocery.id}}">
+    <h6>Name:</h6>
+    <h3>
+      {{limit grocery.name 15}}
+    </h2>
+    <h6>Author:</h6>
+    <p>
+      {{#if grocery.expiration_date}}
+        {{grocery.expiration_date}}
+      {{else}}
+        No date provided.
+      {{/if}}
+    </p>
+    <p>
+      {{#if grocery.quantity}}
+        {{grocery.quantity}}
+      {{else}}
+        No quantity provided.
+      {{/if}}
+    </p>
+    <p>
+      {{#if grocery.price}}
+        {{grocery.price}}
+      {{else}}
+        No price provided.
+      {{/if}}
+    </p>
+    <button class="btn btn-danger delete-book" data-id="{{grocery.id}}">Delete</button>
+  </section>
+
+{{/each}}
