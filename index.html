@@ -1,17 +1,71 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <title>Example</title>
+      <title>myFridge</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
       <!-- Do not add `link` tags-->
       <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
       <!-- Do not add `script` tags-->
       <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
-      <h1>Browser Template</h1>
+      <div class="container-fluid">
+        <div class="row justify-content-between">
+          <div class="col-4">
+            myFridge
+          </div>
+          <form class="col-6 signinForm" id="sign-in">
+            <div class="row align-items-center">
+              <label class="mx-1 px-1" for="exampleDropdownFormEmail">Email address</label>
+              <input class="form-control col px-6 mr-2" type="email" name="credentials[email]" required>
+              <label class="mx-1 px-1" for="exampleDropdownFormPassword">Password</label>
+              <input class="form-control col" type="password" name="credentials[password]" required>
+              <button class="btn btn-success mx-3 px-3">Sign in</button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="user-message"></div>
+      <div class="main-body pt-6">
+        <div class="py-5 row justify-content-center" style="width: 980px; margin:0 auto">
+          <div class="front_page col-6 mr-5" style="width:565px">
+            <h2>
+              Welcome to myFridge!
+            </h2>
+            <p>
+              Sint senserit officia, ita fugiat cernantur relinqueret. Si nisi sed esse ea
+              quorum constias illustriora. Dolor illustriora vidisse illum consequat,
+              cupidatat ne dolor consequat. Ea qui quae ipsum velit, occaecat aute labore
+              deserunt fugiat an aliquip quo ullamco est iis malis eram est probant e quis o
+              excepteur ex quae, offendit quis quem do quae in et iudicem firmissimum, aute
+              incididunt ad illustriora.Se ex irure elit tempor, possumus voluptatibus in
+              pariatur. Iudicem multos senserit doctrina aut a arbitror consectetur ut e do
+              velit illum veniam, aute consequat e excepteur, aut illum fugiat magna mentitum
+              ad iudicem comprehenderit sed aliquip et probant magna nisi commodo sint et
+              export ubi ingeniis. De dolore in aliqua, te magna aliqua illum deserunt.
+              Admodum se aute si an quae despicationes ea quid possumus graviterque, nulla
+              vidisse te sint tamen.
+            </p>
+          </div>
+          <div class="front_page col-4 ml-3" style="width: 399px">
+            <h2>Sign Up</h2>
+              <h5>It's quick and saves groceries.</h5>
+            <form class="signupForm" id="sign-up">
+              <input class="form-control mt-4" type="email" name="credentials[email]" placeholder="Email@example.com" required>
+              <input class="form-control my-4" type="password" name="credentials[password]" placeholder="New Password" required>
+              <input class="form-control mb-4" type="password" name="credentials[password_confirmation]" placeholder="Confirm Password" required>
+              <button class="btn btn-success px-5">Sign up</button>
+            </form>
+          </div>
+        </div>
+      </div>
+      <main>
+        <div id="content" class="content"></div>
+      </main>
+      <div class="footer">© 2019 ekmy</div>
     </body>
 </html>
