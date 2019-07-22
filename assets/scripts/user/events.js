@@ -5,31 +5,31 @@ const api = require('./api')
 const ui = require('./ui')
 const store = require('../store')
 
+const onSignUp = event => {
+  event.preventDefault()
+  const form = event.target
+  const formData = getFormFields(form)
+  store.save = formData
+  api.signUp(formData)
+    .then(ui.signUpSuccess)
+    .catch(ui.signUpFailure)
+}
+
 const onSignIn = event => {
   event.preventDefault()
   const form = event.target
   const formData = getFormFields(form)
   api.signIn(formData)
-    .then(console.log)
-    .catch(console.log)
-  // .then(ui.signUpSuccess)
-}
-const onSignUp = event => {
-  event.preventDefault()
-  const form = event.target
-  const formData = getFormFields(form)
-  store.signUpData = formData
-  api.signUp(formData)
-    .then(console.log)
-    .catch(console.log)
+    .then(ui.signInSuccess)
+    .catch(ui.signInFailure)
 }
 
 const onGuest = event => {
   event.preventDefault()
   const guestInfo = {
     'credentials': {
-      'email': 'guest@guest',
-      'password': 'guest'
+      'email': 'e@e',
+      'password': 'e'
     }
   }
   api.signIn(guestInfo)
@@ -53,14 +53,10 @@ const onSignOut = () => {
   store.user = undefined
 }
 
-const addHandlers = () => {
-}
-
 module.exports = {
   onSignUp,
   onSignIn,
   onChangePassword,
   onSignOut,
-  onGuest,
-  addHandlers
+  onGuest
 }

@@ -6,13 +6,41 @@
 
       <!-- Do not add `link` tags-->
       <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
-      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
       <!-- Do not add `script` tags-->
       <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
+      <!-- Change Password Modal -->
+      <div class="modal fade" id="passwordModal" tabindex="-1" role="dialog" aria-labelledby="passwordModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="passwordModalLabel">Change Password</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form id="change-password">
+                <div class="form-group row justify-content-around">
+                  <label for="staticEmail" class="col-sm-4 col-form-label">Email</label>
+                  <input type="text" readonly class="form-control-plaintext col-sm-6" id="staticEmail" value="`${store.user.email}`">
+                  <label for="oldPassword" class="col-sm-4 my-2 col-form-label">Old Password</label>
+                  <input type="password" name="passwords[old]" class="form-control col-sm-6 my-2" id="oldPassword" placeholder="Password" required>
+                  <label for="newPassword" class="col-sm-4 col-form-label">New Password</label>
+                  <input type="password" name="passwords[new]" class="form-control col-sm-6" id="newPassword" placeholder="Password" required>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  <button type="submit" class="btn btn-success">Submit</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <div class="container-fluid">
         <div class="row justify-content-between">
           <div class="col-4">
@@ -27,11 +55,20 @@
               <button class="btn btn-success mx-3 px-3">Sign in</button>
             </div>
           </form>
+          <div class="dropdown col-1 hide">
+            <button class="btn btn-success dropdown-toggle" type="button" id="dropdownMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Menu</button>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu">
+              <button class="dropdown-item" type="button">New Grocery</button>
+              <button class="dropdown-item" type="button" data-toggle="modal" data-target="#passwordModal">Change Password</button>
+              <div class="dropdown-divider"></div>
+              <button class="dropdown-item" id="sign-out">Sign Out</button>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="user-message"></div>
-      <div class="main-body pt-6">
-        <div class="py-5 row justify-content-center" style="width: 980px; margin:0 auto">
+      <div class="user-message mr-5">&nbsp</div>
+      <div class="main-body">
+        <div class="py-3 row justify-content-center" style="width: 980px; margin:0 auto">
           <div class="front_page col-6 mr-5" style="width:565px">
             <h2>
               Welcome to myFridge!
@@ -55,11 +92,12 @@
             <h2>Sign Up</h2>
               <h5>It's quick and saves groceries.</h5>
             <form class="signupForm" id="sign-up">
-              <input class="form-control mt-4" type="email" name="credentials[email]" placeholder="Email@example.com" required>
-              <input class="form-control my-4" type="password" name="credentials[password]" placeholder="New Password" required>
-              <input class="form-control mb-4" type="password" name="credentials[password_confirmation]" placeholder="Confirm Password" required>
+              <input class="form-control mt-3" type="email" name="credentials[email]" placeholder="Email@example.com" required>
+              <input class="form-control my-3" type="password" name="credentials[password]" placeholder="New Password" required>
+              <input class="form-control mb-3" type="password" name="credentials[password_confirmation]" placeholder="Confirm Password" required>
               <button class="btn btn-success px-5">Sign up</button>
             </form>
+            <button class="btn btn-primary px-5 my-2 guest">Guest</button>
           </div>
         </div>
       </div>
