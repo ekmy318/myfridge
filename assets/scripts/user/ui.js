@@ -38,12 +38,17 @@ const signInFailure = () => {
   failureMessage('Wrong email or password. Please try again.')
 }
 
-const changePasswordSuccess = (responseData) => {
-  successMessage('Password changed!')
+const changePasswordSuccess = () => {
+  $('.password-message').text('Password changed successfully!')
+  $('.password-message').removeClass('failure')
+  $('.password-message').addClass('success')
+  $('form').trigger('reset')
 }
 
 const changePasswordFailure = () => {
-  failureMessage('Password change failed. Please tray again.')
+  $('.password-message').text('Password changed failed. Please try again.')
+  $('.password-message').removeClass('success')
+  $('.password-message').addClass('failure')
   $('form').trigger('reset')
 }
 
