@@ -14,9 +14,6 @@ const onSignUp = event => {
   store.save = formData
   api.signUp(formData)
     .then(ui.signUpSuccess)
-    // .then(groceryApi.getGroceries)
-    // .then(groceryUi.getGroceriesSuccess)
-    .catch(ui.signUpFailure)
 }
 
 const onSignIn = event => {
@@ -25,8 +22,8 @@ const onSignIn = event => {
   const formData = getFormFields(form)
   api.signIn(formData)
     .then(ui.signInSuccess)
-    // .then(groceriesapi.getGroceries)
-    // .then(groceriesUI.getGroceriesSuccess)
+    .then(groceryApi.getGroceries)
+    .then(groceryUi.getGroceriesSuccess)
     .catch(ui.signInFailure)
 }
 

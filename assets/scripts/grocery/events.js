@@ -1,17 +1,21 @@
 'use strict'
 
-// const api = require('./api.js')
-// const ui = require('./ui.js')
+const getFormFields = require('../../../lib/get-form-fields')
+const api = require('./api.js')
+const ui = require('./ui.js')
 
-// const onGetGroceries = () => {
-//   api.getGroceries()
-//     .then(ui.getGroceriesSuccess)
-//     .catch(console.log)
-// }
+const onCreateGroceries = event => {
+  event.preventDefault()
+  const formData = getFormFields(event.target)
+  api.createGroceries(formData)
+    .then(ui.createGroceriesSuccess)
+    .catch(ui.createGroceriesFailure)
+}
 
-// const addHandlers = () => {
-// }
+const addHandlers = () => {
+  $('#new-grocery').on('submit', onCreateGroceries)
+}
 
 module.exports = {
-  // addHandlers
+  addHandlers
 }

@@ -2,13 +2,16 @@
 
 const store = require('../store')
 const api = require('./api')
+const groceryApi = require('../grocery/api')
+const groceryUi = require('../grocery/ui')
+const showHomeTemplate = require('../templates/home.handlebars')
 
-const successMessage = message => {
-  $('.user-message').text(message)
-  $('.user-message').removeClass('failure')
-  $('.user-message').addClass('success')
-  $('form').trigger('reset')
-}
+// const successMessage = message => {
+//   $('.user-message').text(message)
+//   $('.user-message').removeClass('failure')
+//   $('.user-message').addClass('success')
+//   $('form').trigger('reset')
+// }
 
 const failureMessage = message => {
   $('.user-message').text(message)
@@ -20,6 +23,9 @@ const failureMessage = message => {
 const signUpSuccess = responseData => {
   api.signIn(store.save)
     .then(signInSuccess)
+    .then(groceryApi.getGroceries)
+    .then(groceryUi.getGroceriesSuccess)
+    .catch(signUpFailure)
 }
 
 const signUpFailure = () => {
@@ -51,9 +57,8 @@ const changePasswordFailure = () => {
 }
 
 const signOutSuccess = () => {
-  successMessage('See you next time!')
-  $('.dropdown').addClass('hide')
-  $('#sign-in').removeClass('hide')
+  const showHomeHtml = showHomeTemplate({})
+  $('body').html(showHomeHtml)
 }
 
 const signOutFailure = () => {

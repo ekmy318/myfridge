@@ -4,9 +4,20 @@ const config = require('../config')
 const store = require('../store')
 
 const getGroceries = function () {
-  console.log('store is: ', store)
   return $.ajax({
     url: config.apiUrl + '/groceries',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
+const createGroceries = formData => {
+  console.log('formData is', formData)
+  return $.ajax({
+    url: config.apiUrl + '/groceries',
+    data: formData,
+    method: 'POST',
     headers: {
       Authorization: 'Token token=' + store.user.token
     }
@@ -23,5 +34,6 @@ const deleteBook = function (id) {
 
 module.exports = {
   getGroceries,
+  createGroceries,
   deleteBook
 }
