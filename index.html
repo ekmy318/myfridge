@@ -11,6 +11,42 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
+
+      <!-- New Grocery Modal -->
+      <div class="modal fade" id="newgroceryModal" tabindex="-1" role="dialog" aria-labelledby="newgroceryModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="newgroceryModalLabel">Add Grocery</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form id="new-grocery">
+                <div class="form-group row justify-content-around">
+                  <!-- <label for="oldPassword" class="col-sm-4 my-2 col-form-label">Old Password</label>
+                  <input type="password" name="passwords[old]" class="form-control col-sm-6 my-2" id="oldPassword" placeholder="Password" required>
+                  <label for="newPassword" class="col-sm-4 col-form-label">New Password</label>
+                  <input type="password" name="passwords[new]" class="form-control col-sm-6" id="newPassword" placeholder="Password" required>
+                  <label for="oldPassword" class="col-sm-4 my-2 col-form-label">Old Password</label>
+                  <input type="password" name="passwords[old]" class="form-control col-sm-6 my-2" id="oldPassword" placeholder="Password" required>
+                  <label for="newPassword" class="col-sm-4 col-form-label">New Password</label>
+                  <input type="password" name="passwords[new]" class="form-control col-sm-6" id="newPassword" placeholder="Password" required> -->
+                </div>
+                <div class="modal-footer row align-items-center">
+                  <div class="password-message col">&nbsp</div>
+                  <div class="change-password-model col" align="right">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-success">Add</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <!-- Change Password Modal -->
       <div class="modal fade" id="passwordModal" tabindex="-1" role="dialog" aria-labelledby="passwordModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
@@ -61,7 +97,8 @@
           <div class="dropdown col-1 hide">
             <button class="btn btn-success dropdown-toggle" type="button" id="dropdownMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Menu</button>
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu">
-              <button class="dropdown-item" type="button">New Grocery</button>
+              <button class="dropdown-item" id="index-groceries" type="button">My Groceries</button>
+              <button class="dropdown-item" type="button" data-toggle="modal" data-target="#newgroceryModal">New Grocery</button>
               <button class="dropdown-item" type="button" data-toggle="modal" data-target="#passwordModal">Change Password</button>
               <div class="dropdown-divider"></div>
               <button class="dropdown-item" id="sign-out">Sign Out</button>
@@ -100,7 +137,7 @@
               <input class="form-control mb-3" type="password" name="credentials[password_confirmation]" placeholder="Confirm Password" required>
               <button class="btn btn-success px-5">Sign up</button>
             </form>
-            <button class="btn btn-primary px-5 my-2 guest">Guest</button>
+            <button class="btn btn-primary px-5 my-2 guest">e@e</button>
           </div>
         </div>
       </div>

@@ -1,20 +1,17 @@
 'use strict'
 
-const api = require('./api.js')
-const ui = require('./ui.js')
+// const api = require('./api.js')
+// const ui = require('./ui.js')
 
-const onGetGroceries = (event) => {
-  event.preventDefault()
-  api.getGroceries()
-    .then(ui.getBooksSuccess)
-    .catch(console.log)
-}
+// const onGetGroceries = () => {
+//   api.getGroceries()
+//     .then(ui.getGroceriesSuccess)
+//     .catch(console.log)
+// }
 
-const addHandlers = () => {
-  $('body').on('submit', '#sign-in', onGetGroceries)
-  $('body').on('submit', '#sign-up', onGetGroceries)
-}
+// const addHandlers = () => {
+// }
 
 module.exports = {
-  addHandlers
+  // addHandlers
 }

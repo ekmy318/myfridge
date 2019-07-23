@@ -18,7 +18,6 @@ const failureMessage = message => {
 }
 
 const signUpSuccess = responseData => {
-  // ('#sign-in').addClass('hide')
   api.signIn(store.save)
     .then(signInSuccess)
 }

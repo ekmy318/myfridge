@@ -1,10 +1,9 @@
-{{#each groceries as |grocery|}}
+{{#each groceries as |grocery| }}
   <section data-id="{{grocery.id}}">
-    <h6>Name:</h6>
     <h3>
       {{limit grocery.name 15}}
     </h2>
-    <h6>Author:</h6>
+    <h6>Expiration Date:</h6>
     <p>
       {{#if grocery.expiration_date}}
         {{grocery.expiration_date}}
@@ -12,6 +11,7 @@
         No date provided.
       {{/if}}
     </p>
+    <h6>Quantity:</h6>
     <p>
       {{#if grocery.quantity}}
         {{grocery.quantity}}
@@ -19,14 +19,15 @@
         No quantity provided.
       {{/if}}
     </p>
+    <h6>Price:</h6>
     <p>
       {{#if grocery.price}}
-        {{grocery.price}}
+        ${{grocery.price}}
       {{else}}
         No price provided.
       {{/if}}
     </p>
-    <button class="btn btn-danger delete-book" data-id="{{grocery.id}}">Delete</button>
+    <button class="btn btn-danger delete-grocery" data-id="{{grocery.id}}">Delete</button>
   </section>
 
 {{/each}}

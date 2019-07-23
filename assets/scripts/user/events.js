@@ -3,6 +3,8 @@
 const getFormFields = require('../../../lib/get-form-fields')
 const api = require('./api')
 const ui = require('./ui')
+const groceryApi = require('../grocery/api')
+const groceryUi = require('../grocery/ui')
 const store = require('../store')
 
 const onSignUp = event => {
@@ -12,6 +14,8 @@ const onSignUp = event => {
   store.save = formData
   api.signUp(formData)
     .then(ui.signUpSuccess)
+    // .then(groceryApi.getGroceries)
+    // .then(groceryUi.getGroceriesSuccess)
     .catch(ui.signUpFailure)
 }
 
@@ -21,6 +25,8 @@ const onSignIn = event => {
   const formData = getFormFields(form)
   api.signIn(formData)
     .then(ui.signInSuccess)
+    // .then(groceriesapi.getGroceries)
+    // .then(groceriesUI.getGroceriesSuccess)
     .catch(ui.signInFailure)
 }
 
@@ -32,8 +38,11 @@ const onGuest = event => {
       'password': 'e'
     }
   }
+  console.log('store at guest:', store)
   api.signIn(guestInfo)
     .then(ui.signInSuccess)
+    .then(groceryApi.getGroceries)
+    .then(groceryUi.getGroceriesSuccess)
     .catch(ui.signInFailure)
 }
 
