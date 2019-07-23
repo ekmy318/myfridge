@@ -24,18 +24,21 @@
             </div>
             <div class="modal-body">
               <form id="new-grocery">
-                <div class="form-group row justify-content-around">
-                  <!-- <label for="oldPassword" class="col-sm-4 my-2 col-form-label">Old Password</label>
-                  <input type="password" name="passwords[old]" class="form-control col-sm-6 my-2" id="oldPassword" placeholder="Password" required>
-                  <label for="newPassword" class="col-sm-4 col-form-label">New Password</label>
-                  <input type="password" name="passwords[new]" class="form-control col-sm-6" id="newPassword" placeholder="Password" required>
-                  <label for="oldPassword" class="col-sm-4 my-2 col-form-label">Old Password</label>
-                  <input type="password" name="passwords[old]" class="form-control col-sm-6 my-2" id="oldPassword" placeholder="Password" required>
-                  <label for="newPassword" class="col-sm-4 col-form-label">New Password</label>
-                  <input type="password" name="passwords[new]" class="form-control col-sm-6" id="newPassword" placeholder="Password" required> -->
+                <div class="form-group row justify-content-center">
+                  <label for="groceryName" class="col-5 col-form-label">Name</label>
+                  <input type="text" name="grocery[name]" class ="form-control col-5" id="groceryName" placeholder="Apple" required>
+                  <div class="w-100"></div>
+                  <label for="groceryQuantity" class="col-5 my-2 col-form-label">Quantity</label>
+                  <input type="number" name="grocery[quantity]" class="form-control col-5 my-2" id="groceryQuantity" placeholder="3" required>
+                  <div class="w-100"></div>
+                  <label for="groceryPrice" class="col-5 col-form-label">Price</label>
+                  <input type="number" name="grocery[price]" class="form-control col-5" id="groceryPrice" placeholder="1.25" required>
+                  <div class="w-100"></div>
+                  <label for="groceryExpiration_date" class="col-5 my-2 col-form-label">Expiration Date</label>
+                  <input type="date" name="grocery[expiration_date]" class="form-control col col-5 my-2" id="groceryExpiration_date" required>
                 </div>
                 <div class="modal-footer row align-items-center">
-                  <div class="password-message col">&nbsp</div>
+                  <div class="new-grocery col">&nbsp</div>
                   <div class="change-password-model col" align="right">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                     <button type="submit" class="btn btn-success">Add</button>
@@ -97,7 +100,6 @@
           <div class="dropdown col-1 hide">
             <button class="btn btn-success dropdown-toggle" type="button" id="dropdownMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Menu</button>
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu">
-              <button class="dropdown-item" id="index-groceries" type="button">My Groceries</button>
               <button class="dropdown-item" type="button" data-toggle="modal" data-target="#newgroceryModal">New Grocery</button>
               <button class="dropdown-item" type="button" data-toggle="modal" data-target="#passwordModal">Change Password</button>
               <div class="dropdown-divider"></div>
