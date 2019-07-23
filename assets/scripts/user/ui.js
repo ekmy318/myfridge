@@ -6,12 +6,12 @@ const groceryApi = require('../grocery/api')
 const groceryUi = require('../grocery/ui')
 const showHomeTemplate = require('../templates/home.handlebars')
 
-// const successMessage = message => {
-//   $('.user-message').text(message)
-//   $('.user-message').removeClass('failure')
-//   $('.user-message').addClass('success')
-//   $('form').trigger('reset')
-// }
+const successMessage = message => {
+  $('.user-message').text(message)
+  $('.user-message').removeClass('failure')
+  $('.user-message').addClass('success')
+  $('form').trigger('reset')
+}
 
 const failureMessage = message => {
   $('.user-message').text(message)
@@ -36,6 +36,7 @@ const signInSuccess = responseData => {
   store.user = responseData.user
   $('#sign-in').addClass('hide')
   $('.dropdown').removeClass('hide')
+  successMessage('Welcome to your fridge!')
 }
 
 const signInFailure = () => {
@@ -58,6 +59,7 @@ const changePasswordFailure = () => {
 
 const signOutSuccess = () => {
   $('body').html(showHomeTemplate)
+  successMessage('See you again soon!')
 }
 
 const signOutFailure = () => {

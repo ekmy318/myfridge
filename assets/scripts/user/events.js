@@ -14,6 +14,7 @@ const onSignUp = event => {
   store.save = formData
   api.signUp(formData)
     .then(ui.signUpSuccess)
+    .catch(ui.signUpFailure)
 }
 
 const onSignIn = event => {
