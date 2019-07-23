@@ -9,11 +9,13 @@ const onCreateGroceries = event => {
   const formData = getFormFields(event.target)
   api.createGroceries(formData)
     .then(ui.createGroceriesSuccess)
+    .then(api.getGroceries)
+    .then(ui.getGroceriesSuccess)
     .catch(ui.createGroceriesFailure)
 }
 
 const addHandlers = () => {
-  $('#new-grocery').on('submit', onCreateGroceries)
+  $(document).on('submit', '#new-grocery', onCreateGroceries)
 }
 
 module.exports = {

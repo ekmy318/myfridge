@@ -35,7 +35,6 @@ const onGuest = event => {
       'password': 'e'
     }
   }
-  console.log('store at guest:', store)
   api.signIn(guestInfo)
     .then(ui.signInSuccess)
     .then(groceryApi.getGroceries)
@@ -59,10 +58,14 @@ const onSignOut = () => {
   store.user = undefined
 }
 
+const addHandlers = () => {
+  $(document).on('submit', '#sign-in', onSignIn)
+  $(document).on('submit', '#sign-up', onSignUp)
+  $(document).on('click', '.guest', onGuest)
+  $(document).on('submit', '#change-password', onChangePassword)
+  $(document).on('click', '#sign-out', onSignOut)
+}
+
 module.exports = {
-  onSignUp,
-  onSignIn,
-  onChangePassword,
-  onSignOut,
-  onGuest
+  addHandlers
 }

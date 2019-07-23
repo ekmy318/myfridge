@@ -17,8 +17,6 @@ const createGroceriesSuccess = (data) => {
   $('.new-grocery-message').removeClass('failure')
   $('.new-grocery-message').addClass('success')
   $('form').trigger('reset')
-  // const showGroceriesHtml = showGroceriesTemplate({ groceries: data.groceries })
-  // $('.main-body').html(showGroceriesHtml)
 }
 
 const createGroceriesFailure = () => {

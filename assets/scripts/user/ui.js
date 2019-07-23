@@ -57,8 +57,7 @@ const changePasswordFailure = () => {
 }
 
 const signOutSuccess = () => {
-  const showHomeHtml = showHomeTemplate({})
-  $('body').html(showHomeHtml)
+  $('body').html(showHomeTemplate)
 }
 
 const signOutFailure = () => {

@@ -1,136 +1,134 @@
+<div class="modal fade" id="newgroceryModal" tabindex="-1" role="dialog" aria-labelledby="newgroceryModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="newgroceryModalLabel">Add Grocery</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form id="new-grocery">
+          <div class="form-group row justify-content-center">
+            <label for="groceryName" class="col-5 col-form-label">Name</label>
+            <input type="text" name="grocery[name]" class ="form-control col-5" id="groceryName" required>
+            <div class="w-100"></div>
+            <label for="groceryQuantity" class="col-5 my-2 col-form-label">Quantity</label>
+            <input type="number" min="0" name="grocery[quantity]" class="form-control col-5 my-2" id="groceryQuantity" required>
+            <div class="w-100"></div>
+            <label for="groceryPrice" class="col-5 col-form-label">Price</label>
+            <input type="number" step="any" min="0" name="grocery[price]" class="form-control col-5" id="groceryPrice" required>
+            <div class="w-100"></div>
+            <label for="groceryExpiration_date" class="col-5 my-2 col-form-label">Expiration Date</label>
+            <input type="date" name="grocery[expiration_date]" class="form-control col col-5 my-2" id="groceryExpiration_date" required>
+          </div>
+          <div class="modal-footer row align-items-center">
+            <div class="new-grocery-message col">&nbsp</div>
+            <div class="change-password-model col" align="right">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="submit" class="btn btn-success">Add</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
 
-      <!-- New Grocery Modal -->
-      <div class="modal fade" id="newgroceryModal" tabindex="-1" role="dialog" aria-labelledby="newgroceryModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="newgroceryModalLabel">Add Grocery</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-              <form id="new-grocery">
-                <div class="form-group row justify-content-center">
-                  <label for="groceryName" class="col-5 col-form-label">Name</label>
-                  <input type="text" name="grocery[name]" class ="form-control col-5" id="groceryName" placeholder="Apple" required>
-                  <div class="w-100"></div>
-                  <label for="groceryQuantity" class="col-5 my-2 col-form-label">Quantity</label>
-                  <input type="number" min="0" name="grocery[quantity]" class="form-control col-5 my-2" id="groceryQuantity" placeholder="3" required>
-                  <div class="w-100"></div>
-                  <label for="groceryPrice" class="col-5 col-form-label">Price</label>
-                  <input type="number" step="any" min="0" name="grocery[price]" class="form-control col-5" id="groceryPrice" placeholder="1.25" required>
-                  <div class="w-100"></div>
-                  <label for="groceryExpiration_date" class="col-5 my-2 col-form-label">Expiration Date</label>
-                  <input type="date" name="grocery[expiration_date]" class="form-control col col-5 my-2" id="groceryExpiration_date" required>
-                </div>
-                <div class="modal-footer row align-items-center">
-                  <div class="new-grocery-message col">&nbsp</div>
-                  <div class="change-password-model col" align="right">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-success">Add</button>
-                  </div>
-                </div>
-              </form>
+<!-- Change Password Modal -->
+<div class="modal fade" id="passwordModal" tabindex="-1" role="dialog" aria-labelledby="passwordModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="passwordModalLabel">Change Password</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form id="change-password">
+          <div class="form-group row justify-content-around">
+            <label for="staticEmail" class="col-sm-4 col-form-label">Email</label>
+            <input type="text" readonly class="form-control-plaintext col-sm-6" id="staticEmail" value="`${store.user.email}`">
+            <label for="oldPassword" class="col-sm-4 my-2 col-form-label">Old Password</label>
+            <input type="password" name="passwords[old]" class="form-control col-sm-6 my-2" id="oldPassword" placeholder="Password" required>
+            <label for="newPassword" class="col-sm-4 col-form-label">New Password</label>
+            <input type="password" name="passwords[new]" class="form-control col-sm-6" id="newPassword" placeholder="Password" required>
+          </div>
+          <div class="modal-footer row align-items-center">
+            <div class="password-message col">&nbsp</div>
+            <div class="change-password-model col" align="right">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="submit" class="btn btn-success">Submit</button>
             </div>
           </div>
-        </div>
+        </form>
       </div>
+    </div>
+  </div>
+</div>
 
-      <!-- Change Password Modal -->
-      <div class="modal fade" id="passwordModal" tabindex="-1" role="dialog" aria-labelledby="passwordModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="passwordModalLabel">Change Password</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-              <form id="change-password">
-                <div class="form-group row justify-content-around">
-                  <label for="staticEmail" class="col-sm-4 col-form-label">Email</label>
-                  <input type="text" readonly class="form-control-plaintext col-sm-6" id="staticEmail" value="`${store.user.email}`">
-                  <label for="oldPassword" class="col-sm-4 my-2 col-form-label">Old Password</label>
-                  <input type="password" name="passwords[old]" class="form-control col-sm-6 my-2" id="oldPassword" placeholder="Password" required>
-                  <label for="newPassword" class="col-sm-4 col-form-label">New Password</label>
-                  <input type="password" name="passwords[new]" class="form-control col-sm-6" id="newPassword" placeholder="Password" required>
-                </div>
-                <div class="modal-footer row align-items-center">
-                  <div class="password-message col">&nbsp</div>
-                  <div class="change-password-model col" align="right">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-success">Submit</button>
-                  </div>
-                </div>
-              </form>
-            </div>
-          </div>
-        </div>
+<div class="container-fluid">
+  <div class="row justify-content-between">
+    <div class="col-4">
+      myFridge
+    </div>
+    <form class="col-6 signinForm" id="sign-in">
+      <div class="row align-items-center">
+        <label class="mx-1 px-1" for="exampleDropdownFormEmail">Email address</label>
+        <input class="form-control col px-6 mr-2" type="email" name="credentials[email]" required>
+        <label class="mx-1 px-1" for="exampleDropdownFormPassword">Password</label>
+        <input class="form-control col" type="password" name="credentials[password]" required>
+        <button class="btn btn-success mx-3 px-3">Sign in</button>
       </div>
-
-      <div class="container-fluid">
-        <div class="row justify-content-between">
-          <div class="col-4">
-            myFridge
-          </div>
-          <form class="col-6 signinForm" id="sign-in">
-            <div class="row align-items-center">
-              <label class="mx-1 px-1" for="exampleDropdownFormEmail">Email address</label>
-              <input class="form-control col px-6 mr-2" type="email" name="credentials[email]" required>
-              <label class="mx-1 px-1" for="exampleDropdownFormPassword">Password</label>
-              <input class="form-control col" type="password" name="credentials[password]" required>
-              <button class="btn btn-success mx-3 px-3">Sign in</button>
-            </div>
-          </form>
-          <div class="dropdown col-1 hide">
-            <button class="btn btn-success dropdown-toggle" type="button" id="dropdownMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Menu</button>
-            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu">
-              <button class="dropdown-item" type="button" data-toggle="modal" data-target="#newgroceryModal">New Grocery</button>
-              <button class="dropdown-item" type="button" data-toggle="modal" data-target="#passwordModal">Change Password</button>
-              <div class="dropdown-divider"></div>
-              <button class="dropdown-item" id="sign-out">Sign Out</button>
-            </div>
-          </div>
-        </div>
+    </form>
+    <div class="dropdown col-1 hide">
+      <button class="btn btn-success dropdown-toggle" type="button" id="dropdownMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Menu</button>
+      <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu">
+        <button class="dropdown-item" type="button" data-toggle="modal" data-target="#newgroceryModal">New Grocery</button>
+        <button class="dropdown-item" type="button" data-toggle="modal" data-target="#passwordModal">Change Password</button>
+        <div class="dropdown-divider"></div>
+        <button class="dropdown-item" id="sign-out">Sign Out</button>
       </div>
-      <div class="user-message mr-5">&nbsp</div>
-      <div class="main-body">
-        <div class="py-3 row justify-content-center" style="width: 980px; margin:0 auto">
-          <div class="front_page col-6 mr-5" style="width:565px">
-            <h2>
-              Welcome to myFridge!
-            </h2>
-            <p>
-              Sint senserit officia, ita fugiat cernantur relinqueret. Si nisi sed esse ea
-              quorum constias illustriora. Dolor illustriora vidisse illum consequat,
-              cupidatat ne dolor consequat. Ea qui quae ipsum velit, occaecat aute labore
-              deserunt fugiat an aliquip quo ullamco est iis malis eram est probant e quis o
-              excepteur ex quae, offendit quis quem do quae in et iudicem firmissimum, aute
-              incididunt ad illustriora.Se ex irure elit tempor, possumus voluptatibus in
-              pariatur. Iudicem multos senserit doctrina aut a arbitror consectetur ut e do
-              velit illum veniam, aute consequat e excepteur, aut illum fugiat magna mentitum
-              ad iudicem comprehenderit sed aliquip et probant magna nisi commodo sint et
-              export ubi ingeniis. De dolore in aliqua, te magna aliqua illum deserunt.
-              Admodum se aute si an quae despicationes ea quid possumus graviterque, nulla
-              vidisse te sint tamen.
-            </p>
-          </div>
-          <div class="front_page col-4 ml-3" style="width: 399px">
-            <h2>Sign Up</h2>
-              <h5>It's quick and saves groceries.</h5>
-            <form class="signupForm" id="sign-up">
-              <input class="form-control mt-3" type="email" name="credentials[email]" placeholder="Email@example.com" required>
-              <input class="form-control my-3" type="password" name="credentials[password]" placeholder="New Password" required>
-              <input class="form-control mb-3" type="password" name="credentials[password_confirmation]" placeholder="Confirm Password" required>
-              <button class="btn btn-success px-5">Sign up</button>
-            </form>
-            <button class="btn btn-primary px-5 my-2 guest">e@e</button>
-          </div>
-        </div>
-      </div>
-      <main>
-        <div id="content" class="content"></div>
-      </main>
-      <div class="footer">© 2019 ekmy</div>
+    </div>
+  </div>
+</div>
+<div class="user-message mr-5">&nbsp</div>
+<div class="main-body">
+  <div class="py-3 row justify-content-center" style="width: 980px; margin:0 auto">
+    <div class="front_page col-6 mr-5" style="width:565px">
+      <h2>
+        Welcome to myFridge!
+      </h2>
+      <p>
+        Sint senserit officia, ita fugiat cernantur relinqueret. Si nisi sed esse ea
+        quorum constias illustriora. Dolor illustriora vidisse illum consequat,
+        cupidatat ne dolor consequat. Ea qui quae ipsum velit, occaecat aute labore
+        deserunt fugiat an aliquip quo ullamco est iis malis eram est probant e quis o
+        excepteur ex quae, offendit quis quem do quae in et iudicem firmissimum, aute
+        incididunt ad illustriora.Se ex irure elit tempor, possumus voluptatibus in
+        pariatur. Iudicem multos senserit doctrina aut a arbitror consectetur ut e do
+        velit illum veniam, aute consequat e excepteur, aut illum fugiat magna mentitum
+        ad iudicem comprehenderit sed aliquip et probant magna nisi commodo sint et
+        export ubi ingeniis. De dolore in aliqua, te magna aliqua illum deserunt.
+        Admodum se aute si an quae despicationes ea quid possumus graviterque, nulla
+        vidisse te sint tamen.
+      </p>
+    </div>
+    <div class="front_page col-4 ml-3" style="width: 399px">
+      <h2>Sign Up</h2>
+        <h5>It's quick and saves groceries.</h5>
+      <form class="signupForm" id="sign-up">
+        <input class="form-control mt-3" type="email" name="credentials[email]" placeholder="Email@example.com" required>
+        <input class="form-control my-3" type="password" name="credentials[password]" placeholder="New Password" required>
+        <input class="form-control mb-3" type="password" name="credentials[password_confirmation]" placeholder="Confirm Password" required>
+        <button class="btn btn-success px-5">Sign up</button>
+      </form>
+      <button class="btn btn-primary px-5 my-2 guest">e@e</button>
+    </div>
+  </div>
+</div>
+<main>
+  <div id="content" class="content"></div>
+</main>
+<!-- <div class="footer navbar fixed-bottom navbar-light bg-light">© 2019 ekmy</div> -->
