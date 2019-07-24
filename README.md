@@ -6,21 +6,15 @@ Single Page Application that enables authenticated and authorized user access to
 [Client deploy](https://ekmy318.github.io/myfridge_frontend/) :green_apple: [Heroku deploy](https://thawing-beyond-81012.herokuapp.com/)
 
 ## Technologies Used
-:pineapple: Ruby
 
-:stew: Ruby on Rails
+| Frontend      | Backend |
+| ------------- |---------|
+| :watermelon: Javascript | :pineapple: Ruby     |
+| :fried_shrimp: HTML     | :stew: Ruby on Rails |
+| :strawberry: jQuery     | :banana: PostgreSQL  |
+| :pizza: CSS/SCSS        |
+| :lemon: Bootstrap       |
 
-:banana: PostgreSQL
-
-:watermelon: Javascript
-
-:fried_shrimp: HTML
-
-:strawberry: jQuery
-
-:pizza: CSS/SCSS
-
-:lemon: Bootstrap
 
 ## The Development
 Admittedly, I do not keep a mental list of every item in my fridge and its expiration date in my head. The number of times I've found myself with 3 ![](https://i.imgur.com/YtX0WSz.jpg) bottles ![](https://i.imgur.com/YtX0WSz.jpg) of ![](https://i.imgur.com/YtX0WSz.jpg) ketchup is quite embarrassing.
