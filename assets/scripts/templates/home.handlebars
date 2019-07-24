@@ -12,19 +12,19 @@
         <form id="new-grocery">
           <div class="form-group row justify-content-center">
             <label for="groceryName" class="col-5 col-form-label">Name</label>
-            <input type="text" name="grocery[name]" class ="form-control col-5" id="groceryName" required>
+            <input type="text" name="grocery[name]" class ="form-control col-5" id="groceryName" placeholder="Mangos" equired>
             <div class="w-100"></div>
             <label for="groceryQuantity" class="col-5 my-2 col-form-label">Quantity</label>
-            <input type="number" min="0" name="grocery[quantity]" class="form-control col-5 my-2" id="groceryQuantity" required>
+            <input type="number" min="0" name="grocery[quantity]" class="form-control col-5 my-2" id="groceryQuantity" placeholder="2" required>
             <div class="w-100"></div>
             <label for="groceryPrice" class="col-5 col-form-label">Price</label>
-            <input type="number" step="any" min="0" name="grocery[price]" class="form-control col-5" id="groceryPrice" required>
+            <input type="number" step="any" min="0" name="grocery[price]" class="form-control col-5" id="groceryPrice" placeholder="1.25" required>
             <div class="w-100"></div>
             <label for="groceryExpiration_date" class="col-5 my-2 col-form-label">Expiration Date</label>
             <input type="date" name="grocery[expiration_date]" class="form-control col col-5 my-2" id="groceryExpiration_date" required>
           </div>
           <div class="modal-footer row align-items-center">
-            <div class="new-grocery-message col">&nbsp</div>
+            <div class="update-grocery-message col">&nbsp</div>
             <div class="change-password-model col" align="right">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
               <button type="submit" class="btn btn-success">Add</button>
@@ -83,19 +83,19 @@
         <form id="update-grocery">
           <div class="form-group row justify-content-center">
             <label for="groceryName" class="col-5 col-form-label">Name</label>
-            <input type="text" name="grocery[name]" class ="form-control col-5" id="groceryName" required>
+            <input type="text" name="grocery[name]" class ="form-control col-5" id="updategroceryName">
             <div class="w-100"></div>
             <label for="groceryQuantity" class="col-5 my-2 col-form-label">Quantity</label>
-            <input type="number" min="0" name="grocery[quantity]" class="form-control col-5 my-2" id="groceryQuantity" required>
+            <input type="number" min="0" name="grocery[quantity]" class="form-control col-5 my-2" id="updategroceryQuantity">
             <div class="w-100"></div>
             <label for="groceryPrice" class="col-5 col-form-label">Price</label>
-            <input type="number" step="any" min="0" name="grocery[price]" class="form-control col-5" id="groceryPrice" required>
+            <input type="number" step="any" min="0" name="grocery[price]" class="form-control col-5" id="updategroceryPrice">
             <div class="w-100"></div>
             <label for="groceryExpiration_date" class="col-5 my-2 col-form-label">Expiration Date</label>
-            <input type="date" name="grocery[expiration_date]" class="form-control col col-5 my-2" id="groceryExpiration_date" required>
+            <input type="date" name="grocery[expiration_date]" class="form-control col col-5 my-2" id="updategroceryExpiration_date">
           </div>
           <div class="modal-footer row align-items-center">
-            <div class="new-grocery-message col">&nbsp</div>
+            <div class="update-grocery-message col">&nbsp</div>
             <div class="change-password-model col" align="right">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
               <button type="submit" class="btn btn-success">Update</button>
@@ -135,24 +135,11 @@
 <div class="user-message mr-5">&nbsp</div>
 <div class="main-body">
   <div class="py-3 row justify-content-center" style="width: 980px; margin:0 auto">
-    <div class="front_page col-6 mr-5" style="width:565px">
-      <h2>
+    <div class="front_page_left col-6 mr-5" style="width:565px">
+      <h2 class="left_h2">
         Welcome to myFridge!
       </h2>
-      <p>
-        Sint senserit officia, ita fugiat cernantur relinqueret. Si nisi sed esse ea
-        quorum constias illustriora. Dolor illustriora vidisse illum consequat,
-        cupidatat ne dolor consequat. Ea qui quae ipsum velit, occaecat aute labore
-        deserunt fugiat an aliquip quo ullamco est iis malis eram est probant e quis o
-        excepteur ex quae, offendit quis quem do quae in et iudicem firmissimum, aute
-        incididunt ad illustriora.Se ex irure elit tempor, possumus voluptatibus in
-        pariatur. Iudicem multos senserit doctrina aut a arbitror consectetur ut e do
-        velit illum veniam, aute consequat e excepteur, aut illum fugiat magna mentitum
-        ad iudicem comprehenderit sed aliquip et probant magna nisi commodo sint et
-        export ubi ingeniis. De dolore in aliqua, te magna aliqua illum deserunt.
-        Admodum se aute si an quae despicationes ea quid possumus graviterque, nulla
-        vidisse te sint tamen.
-      </p>
+      <img src="public/bf.jpg" class="center">
     </div>
     <div class="front_page col-4 ml-3" style="width: 399px">
       <h2>Sign Up</h2>
