@@ -10,7 +10,7 @@ Single Page Application that enables authenticated and authorized user access to
 
 :stew: Ruby on Rails
 
-:banana: MongoDB
+:banana: PostgreSQL
 
 :watermelon: Javascript
 

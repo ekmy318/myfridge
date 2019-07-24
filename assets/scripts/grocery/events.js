@@ -41,6 +41,13 @@ const getGroceryId = (event) => {
   event.preventDefault()
   store.id = $(event.target).data('id')
   $('.user-message').text('')
+  const grocery = store.data.groceries.find(data => data.id === store.id)
+  console.log(grocery)
+  $('#updategroceryName').val(grocery.name)
+  $('#updategroceryQuantity').val(grocery.quantity)
+  $('#updategroceryPrice').val(grocery.price)
+  $('#updategroceryExpiration_date').val(grocery.expiration_date)
+  $('#updateGroceryNotes').val(grocery.notes)
 }
 
 const addHandlers = () => {

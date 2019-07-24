@@ -27,6 +27,14 @@
         No price provided.
       {{/if}}
     </p>
+    <h6>Note:</h6>
+    <p>
+      {{#if grocery.notes}}
+        {{grocery.notes}}
+      {{else}}
+        No note provided.
+      {{/if}}
+    </p>
     <button class="btn btn-warning update-grocery" type="button" data-toggle="modal" data-target="#updategroceryModal" data-id="{{grocery.id}}">Update</button>
     <button class="btn btn-danger delete-grocery" data-id="{{grocery.id}}">Delete</button>
   </section>

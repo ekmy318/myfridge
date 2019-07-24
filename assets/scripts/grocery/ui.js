@@ -1,9 +1,13 @@
 'use strict'
 
 const showGroceriesTemplate = require('../templates/groceries-listing.handlebars')
+const store = require('../store')
 
 const getGroceriesSuccess = (data) => {
   const showGroceriesHtml = showGroceriesTemplate({ groceries: data.groceries })
+
+  store.data = data
+  console.log(store.data.groceries.name)
   $('.main-body').html(showGroceriesHtml)
 }
 

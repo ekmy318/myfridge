@@ -12,20 +12,23 @@
         <form id="new-grocery">
           <div class="form-group row justify-content-center">
             <label for="groceryName" class="col-5 col-form-label">Name</label>
-            <input type="text" name="grocery[name]" class ="form-control col-5" id="groceryName" placeholder="Mangos" equired>
+            <input type="text" name="grocery[name]" class ="form-control col-5" id="groceryName" placeholder="Mangos">
             <div class="w-100"></div>
             <label for="groceryQuantity" class="col-5 my-2 col-form-label">Quantity</label>
-            <input type="number" min="0" name="grocery[quantity]" class="form-control col-5 my-2" id="groceryQuantity" placeholder="2" required>
+            <input type="number" min="0" name="grocery[quantity]" class="form-control col-5 my-2" id="groceryQuantity" placeholder="2">
             <div class="w-100"></div>
             <label for="groceryPrice" class="col-5 col-form-label">Price</label>
-            <input type="number" step="any" min="0" name="grocery[price]" class="form-control col-5" id="groceryPrice" placeholder="1.25" required>
+            <input type="number" step="any" min="0" name="grocery[price]" class="form-control col-5" id="groceryPrice" placeholder="1.25">
             <div class="w-100"></div>
             <label for="groceryExpiration_date" class="col-5 my-2 col-form-label">Expiration Date</label>
-            <input type="date" name="grocery[expiration_date]" class="form-control col col-5 my-2" id="groceryExpiration_date" required>
+            <input type="date" name="grocery[expiration_date]" class="form-control col col-5 my-2" id="groceryExpiration_date">
+            <div class="w-100"></div>
+            <label for="groceryNote" class="col-5 my-2 col-form-label">Notes</label>
+            <input type="text" name="grocery[notes]" class="form-control col col-5 my-2" id="groceryNotes">
           </div>
           <div class="modal-footer row align-items-center">
-            <div class="update-grocery-message col">&nbsp</div>
-            <div class="change-password-model col" align="right">
+            <div class="new-grocery-message col">&nbsp</div>
+            <div class="new-grocery-model col" align="right">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
               <button type="submit" class="btn btn-success">Add</button>
             </div>
@@ -93,10 +96,13 @@
             <div class="w-100"></div>
             <label for="groceryExpiration_date" class="col-5 my-2 col-form-label">Expiration Date</label>
             <input type="date" name="grocery[expiration_date]" class="form-control col col-5 my-2" id="updategroceryExpiration_date">
+            <div class="w-100"></div>
+            <label for="updateGroceryNotes" class="col-5 my-2 col-form-label">Notes</label>
+            <input type="text" name="grocery[notes]" class="form-control col col-5 my-2" id="updateGroceryNotes">
           </div>
           <div class="modal-footer row align-items-center">
             <div class="update-grocery-message col">&nbsp</div>
-            <div class="change-password-model col" align="right">
+            <div class="update-grocery-model col" align="right">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
               <button type="submit" class="btn btn-success">Update</button>
             </div>
