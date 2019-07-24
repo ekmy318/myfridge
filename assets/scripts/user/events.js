@@ -7,6 +7,10 @@ const groceryApi = require('../grocery/api')
 const groceryUi = require('../grocery/ui')
 const store = require('../store')
 
+const clear = () => {
+  $('.user-message').text('')
+}
+
 const onSignUp = event => {
   event.preventDefault()
   const form = event.target
@@ -60,13 +64,14 @@ const onSignOut = () => {
 }
 
 const addHandlers = () => {
-  $(document).on('submit', '#sign-in', onSignIn)
-  $(document).on('submit', '#sign-up', onSignUp)
-  $(document).on('click', '.guest', onGuest)
-  $(document).on('submit', '#change-password', onChangePassword)
-  $(document).on('click', '#sign-out', onSignOut)
+  $('html').on('submit', '#sign-in', onSignIn)
+  $('html').on('submit', '#sign-up', onSignUp)
+  $('html').on('click', '.guest', onGuest)
+  $('html').on('submit', '#change-password', onChangePassword)
+  $('html').on('click', '#sign-out', onSignOut)
 }
 
 module.exports = {
+  clear,
   addHandlers
 }

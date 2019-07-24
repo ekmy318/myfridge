@@ -1,3 +1,4 @@
+<!-- New Grocery Modal -->
 <div class="modal fade" id="newgroceryModal" tabindex="-1" role="dialog" aria-labelledby="newgroceryModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -35,6 +36,7 @@
   </div>
 </div>
 
+<!-- Change Password Modal -->
 <div class="modal fade" id="passwordModal" tabindex="-1" role="dialog" aria-labelledby="passwordModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -48,7 +50,7 @@
         <form id="change-password">
           <div class="form-group row justify-content-around">
             <label for="staticEmail" class="col-sm-4 col-form-label">Email</label>
-            <input type="text" readonly class="form-control-plaintext col-sm-6" id="staticEmail" value="ADD EMAIL HERE">
+            <input type="text" readonly class="form-control-plaintext col-sm-6" id="staticEmail" value="`${store.user.email}`">
             <label for="oldPassword" class="col-sm-4 my-2 col-form-label">Old Password</label>
             <input type="password" name="passwords[old]" class="form-control col-sm-6 my-2" id="oldPassword" placeholder="Password" required>
             <label for="newPassword" class="col-sm-4 col-form-label">New Password</label>
@@ -59,6 +61,44 @@
             <div class="change-password-model col" align="right">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
               <button type="submit" class="btn btn-success">Submit</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Update Grocery Modal -->
+<div class="modal fade" id="updategroceryModal" tabindex="-1" role="dialog" aria-labelledby="updategroceryModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="updategroceryModalLabel">Update Grocery</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form id="update-grocery">
+          <div class="form-group row justify-content-center">
+            <label for="groceryName" class="col-5 col-form-label">Name</label>
+            <input type="text" name="grocery[name]" class ="form-control col-5" id="groceryName" required>
+            <div class="w-100"></div>
+            <label for="groceryQuantity" class="col-5 my-2 col-form-label">Quantity</label>
+            <input type="number" min="0" name="grocery[quantity]" class="form-control col-5 my-2" id="groceryQuantity" required>
+            <div class="w-100"></div>
+            <label for="groceryPrice" class="col-5 col-form-label">Price</label>
+            <input type="number" step="any" min="0" name="grocery[price]" class="form-control col-5" id="groceryPrice" required>
+            <div class="w-100"></div>
+            <label for="groceryExpiration_date" class="col-5 my-2 col-form-label">Expiration Date</label>
+            <input type="date" name="grocery[expiration_date]" class="form-control col col-5 my-2" id="groceryExpiration_date" required>
+          </div>
+          <div class="modal-footer row align-items-center">
+            <div class="new-grocery-message col">&nbsp</div>
+            <div class="change-password-model col" align="right">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="submit" class="btn btn-success">Update</button>
             </div>
           </div>
         </form>

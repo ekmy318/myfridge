@@ -6,4 +6,6 @@ const groceryEvents = require('./grocery/events.js')
 $(() => {
   userEvents.addHandlers()
   groceryEvents.addHandlers()
-})
+  $('.dropdown').on('click', userEvents.clear)
+}
+)

@@ -1,15 +1,10 @@
 'use strict'
 
 const showGroceriesTemplate = require('../templates/groceries-listing.handlebars')
-const failureMessage = require('../user/ui.js')
 
 const getGroceriesSuccess = (data) => {
   const showGroceriesHtml = showGroceriesTemplate({ groceries: data.groceries })
   $('.main-body').html(showGroceriesHtml)
-}
-
-const getGroceriesFailure = () => {
-  failureMessage('Sign up failed! Please try again.')
 }
 
 const createGroceriesSuccess = (data) => {
@@ -26,9 +21,30 @@ const createGroceriesFailure = () => {
   $('form').trigger('reset')
 }
 
+const deleteGrocerySuccess = () => {
+  $('.user-message').text('Deleted grocery!')
+  $('.user-message').removeClass('failure')
+  $('.user-message').addClass('success')
+}
+
+const deleteGroceriesFailure = () => {
+  $('.user-message').text('Failed to delete. Please try again.')
+  $('.user-message').removeClass('success')
+  $('.user-message').addClass('failure')
+}
+
+const updateGroceriesSuccess = () => {
+  $('.update-grocery-message').text('Updated Grocery!')
+  $('.update-grocery-message').removeClass('failure')
+  $('.update-grocery-message').addClass('success')
+  $('form').trigger('reset')
+}
+
 module.exports = {
   getGroceriesSuccess,
-  getGroceriesFailure,
   createGroceriesSuccess,
-  createGroceriesFailure
+  createGroceriesFailure,
+  deleteGrocerySuccess,
+  deleteGroceriesFailure,
+  updateGroceriesSuccess
 }
