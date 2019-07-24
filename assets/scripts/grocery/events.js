@@ -42,7 +42,6 @@ const getGroceryId = (event) => {
   store.id = $(event.target).data('id')
   $('.user-message').text('')
   const grocery = store.data.groceries.find(data => data.id === store.id)
-  console.log(grocery)
   $('#updategroceryName').val(grocery.name)
   $('#updategroceryQuantity').val(grocery.quantity)
   $('#updategroceryPrice').val(grocery.price)

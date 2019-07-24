@@ -55,6 +55,11 @@ const onChangePassword = event => {
     .catch(ui.changePasswordFailure)
 }
 
+const getEmail = event => {
+  event.preventDefault()
+  $('#staticEmail').val(store.user.email)
+}
+
 const onSignOut = () => {
   event.preventDefault()
   api.signOut()
@@ -68,6 +73,7 @@ const addHandlers = () => {
   $('html').on('submit', '#sign-up', onSignUp)
   $('html').on('click', '.guest', onGuest)
   $('html').on('submit', '#change-password', onChangePassword)
+  $('html').on('click', '#pwchange', getEmail)
   $('html').on('click', '#sign-out', onSignOut)
 }
 
