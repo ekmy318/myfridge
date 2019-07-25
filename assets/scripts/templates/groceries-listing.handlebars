@@ -1,41 +1,54 @@
 {{#each groceries as |grocery| }}
-  <section data-id="{{grocery.id}}">
-    <h2>
+  <section data-id="{{grocery.id}}" class="row justify-content-center">
+    <h2 class="col">
       {{grocery.name}}
     </h2>
-    <h5>Expiration Date:</h5>
-    <p>
+    <div class="w-100"></div>
+    <h6 class="col-6 key">Expiration Date</h6>
+    <h6 class="col-6 value">
       {{#if grocery.expiration_date}}
-        {{grocery.expiration_date}}
+      {{grocery.expiration_date}}
       {{else}}
-        No date provided.
+      No date provided
       {{/if}}
-    </p>
-    <h5>Quantity:</h5>
-    <p>
+    </h6>
+    <div class="w-100"></div>
+    <h6 class="col-6 key">Days left</h6>
+    <h6 class="col-6 value">
+      {{#if grocery.days_until}}
+        {{grocery.days_until}}
+      {{/if}}
+    </h6>
+    <div class="w-100"></div>
+    <h6 class="col-6 key">Quantity</h6>
+    <h6 class="col-6 value">
       {{#if grocery.quantity}}
         {{grocery.quantity}}
       {{else}}
-        No quantity provided.
+        No quantity provided
       {{/if}}
-    </p>
-    <h5>Price:</h5>
-    <p>
+    </h6>
+    <div class="w-100"></div>
+    <h6 class="col-6 key">Price</h6>
+    <h6 class="col-6 value">
       {{#if grocery.price}}
         ${{grocery.price}}
       {{else}}
-        No price provided.
+        No price provided
       {{/if}}
-    </p>
-    <h5>Note:</h5>
-    <p>
+    </h6>
+    <div class="w-100"></div>
+    <h5 class="col key note">Notes</h5>
+    <div class="w-100"></div>
+    <p class="col notes value">
       {{#if grocery.notes}}
         {{grocery.notes}}
       {{/if}}
     </p>
-    <div class="updateButtonDivn row justify-content-center">
-      <button class="btn btn-warning update-grocery mr-2" type="button" data-toggle="modal" data-target="#updategroceryModal" data-id="{{grocery.id}}">Update</button>
-      <button class="btn btn-danger delete-grocery ml-2" data-id="{{grocery.id}}">Delete</button>
+    <div class="w-100"></div>
+    <div class="row justify-content-center">
+      <button class="col btn btn-warning update-grocery mr-2" type="button" data-toggle="modal" data-target="#updategroceryModal" data-id="{{grocery.id}}">Update</button>
+      <button class="col btn btn-danger delete-grocery ml-2" data-id="{{grocery.id}}">Delete</button>
     </div>
   </section>
 {{/each}}

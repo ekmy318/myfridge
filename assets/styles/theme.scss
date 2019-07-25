@@ -7,6 +7,10 @@ body {
 .main-body {
   @include make-container;
   @include make-row;
+  padding-right: 0;
+  padding-left: 0;
+  margin: 0;
+  justify-content: center;
 
   section {
     @include make-col-ready;
@@ -22,7 +26,8 @@ body {
     background: $white;
     border: 1px solid;
     margin: -1px;
-    margin-top: 1rem;
+    margin-left: 3px;
+    margin: 5px;
     outline: none;
     padding: 1rem;
 
@@ -36,15 +41,30 @@ body {
       }
     }
     h2 {
-      margin-bottom: 1rem;
+      margin-bottom: 1.5rem;
+      text-align: center;
       text-transform: capitalize;
     }
 
+
     p {
       word-wrap: break-word;
+      text-align: center;
     }
 
-    .updateButtonDiv {
+    .key {
+      font-weight: bold;
+      padding-right: 0;
+      text-align: center;
+    }
+
+    .note {
+      margin-top: 1rem;
+      text-align: center;
+    }
+
+    .value {
+      padding: 0;
       text-align: center;
     }
   }
