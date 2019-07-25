@@ -7,6 +7,9 @@ const getGroceriesSuccess = (data) => {
   const showGroceriesHtml = showGroceriesTemplate({ groceries: data.groceries })
   store.data = data
   $('.main-body').html(showGroceriesHtml)
+  if (data.groceries.length === 0) {
+    $('.user-message').text('No groceries! Add some!')
+  }
 }
 
 const createGroceriesSuccess = (data) => {
