@@ -1,12 +1,13 @@
 body {
-  // background: lighten($info, 50%);
+  background: lighten($info, 50%);
   min-height: 100vh;
   padding: 5rem 0 1rem;
 }
 
-.main-body {
+main {
   @include make-container;
   @include make-container-max-widths;
+  @include make-row;
 
   section {
     @include make-col-ready;
@@ -18,18 +19,10 @@ body {
     }
     background: $white;
     border: 1px solid;
-    cursor: pointer;
     margin: -1px;
+    margin-top: 1rem;
     outline: none;
     padding: 1rem;
-  }
-
-  p {
-    margin-bottom: 0;
-  }
-
-  .content {
-    @include make-row;
 
     &:empty {
       &::before {
@@ -56,8 +49,12 @@ body {
 }
 
 .footer {
-  color: black;
+  color: #000;
   font-style: italic;
+  padding-right: 10px;
+  text-align: right;
+  width: 100%;
+  @extend .fixed-bottom;
 }
 
 .front_page {
@@ -91,4 +88,14 @@ body {
 .left_h2 {
   text-align: center;
   margin-bottom: 20px;
+}
+
+.logo {
+  font-size: 1.25em;
+  margin-left: 25px;
+}
+
+.user-message {
+  height: 30px;
+  font-size: 1.25em;
 }

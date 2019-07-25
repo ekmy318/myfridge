@@ -12,13 +12,13 @@
         <form id="new-grocery">
           <div class="form-group row justify-content-center">
             <label for="groceryName" class="col-5 col-form-label">Name</label>
-            <input type="text" name="grocery[name]" class ="form-control col-5" id="groceryName" placeholder="Mangos">
+            <input type="text" name="grocery[name]" class ="form-control col-5" id="groceryName">
             <div class="w-100"></div>
             <label for="groceryQuantity" class="col-5 my-2 col-form-label">Quantity</label>
-            <input type="number" min="0" name="grocery[quantity]" class="form-control col-5 my-2" id="groceryQuantity" placeholder="2">
+            <input type="number" min="0" name="grocery[quantity]" class="form-control col-5 my-2" id="groceryQuantity">
             <div class="w-100"></div>
             <label for="groceryPrice" class="col-5 col-form-label">Price</label>
-            <input type="number" step="any" min="0" name="grocery[price]" class="form-control col-5" id="groceryPrice" placeholder="1.25">
+            <input type="number" step="any" min="0" name="grocery[price]" class="form-control col-5" id="groceryPrice">
             <div class="w-100"></div>
             <label for="groceryExpiration_date" class="col-5 my-2 col-form-label">Expiration Date</label>
             <input type="date" name="grocery[expiration_date]" class="form-control col col-5 my-2" id="groceryExpiration_date">
@@ -53,11 +53,11 @@
         <form id="change-password">
           <div class="form-group row justify-content-around">
             <label for="staticEmail" class="col-sm-4 col-form-label">Email</label>
-            <input type="text" readonly class="form-control-plaintext col-sm-6" id="staticEmail" value="`${store.user.email}`">
+            <input type="text" readonly class="form-control-plaintext col-sm-6" id="staticEmail">
             <label for="oldPassword" class="col-sm-4 my-2 col-form-label">Old Password</label>
-            <input type="password" name="passwords[old]" class="form-control col-sm-6 my-2" id="oldPassword" placeholder="Password" required>
+            <input type="password" name="passwords[old]" class="form-control col-sm-6 my-2" id="oldPassword" placeholder="Old Password" required>
             <label for="newPassword" class="col-sm-4 col-form-label">New Password</label>
-            <input type="password" name="passwords[new]" class="form-control col-sm-6" id="newPassword" placeholder="Password" required>
+            <input type="password" name="passwords[new]" class="form-control col-sm-6" id="newPassword" placeholder="New Password" required>
           </div>
           <div class="modal-footer row align-items-center">
             <div class="password-message col">&nbsp</div>
@@ -115,7 +115,7 @@
 
 <div class="container-fluid">
   <div class="row justify-content-between">
-    <div class="col-4">
+    <div class="col-4 logo">
       myFridge
     </div>
     <form class="col-6 signinForm" id="sign-in">
@@ -156,10 +156,8 @@
         <input class="form-control mb-3" type="password" name="credentials[password_confirmation]" placeholder="Confirm Password" required>
         <button class="btn btn-success px-5">Sign up</button>
       </form>
-      <button class="btn btn-primary px-5 my-2 guest hide">e@e</button>
+      <button class="btn btn-primary px-5 my-2 guest">e@e</button>
     </div>
   </div>
 </div>
-<main>
-  <div id="content" class="content"></div>
-</main>
+<div class="footer bg-light">© 2019 ekmy</div>

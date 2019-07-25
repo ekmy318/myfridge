@@ -44,17 +44,21 @@ const signInFailure = () => {
 }
 
 const changePasswordSuccess = () => {
+  $('#staticEmail').val(store.user.email)
   $('.password-message').text('Password changed successfully!')
   $('.password-message').removeClass('failure')
   $('.password-message').addClass('success')
   $('form').trigger('reset')
+  $('#staticEmail').val(store.user.email)
 }
 
 const changePasswordFailure = () => {
+  $('#staticEmail').val(store.user.email)
   $('.password-message').text('Password changed failed. Please try again.')
   $('.password-message').removeClass('success')
   $('.password-message').addClass('failure')
   $('form').trigger('reset')
+  $('#staticEmail').val(store.user.email)
 }
 
 const signOutSuccess = () => {

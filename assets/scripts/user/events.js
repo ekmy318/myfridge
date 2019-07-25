@@ -9,6 +9,8 @@ const store = require('../store')
 
 const clear = () => {
   $('.user-message').text('')
+  $('.password-message').text('')
+  $('.new-grocery-message').text('')
 }
 
 const onSignUp = event => {
@@ -75,6 +77,7 @@ const addHandlers = () => {
   $('html').on('submit', '#change-password', onChangePassword)
   $('html').on('click', '#pwchange', getEmail)
   $('html').on('click', '#sign-out', onSignOut)
+  $('html').on('click', '.dropdown', clear)
 }
 
 module.exports = {
