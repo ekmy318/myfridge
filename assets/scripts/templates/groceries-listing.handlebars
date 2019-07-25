@@ -1,10 +1,9 @@
 {{#each groceries as |grocery| }}
-<main>
   <section data-id="{{grocery.id}}">
-    <h3>
+    <h2>
       {{grocery.name}}
     </h2>
-    <h6>Expiration Date:</h6>
+    <h5>Expiration Date:</h5>
     <p>
       {{#if grocery.expiration_date}}
         {{grocery.expiration_date}}
@@ -12,7 +11,7 @@
         No date provided.
       {{/if}}
     </p>
-    <h6>Quantity:</h6>
+    <h5>Quantity:</h5>
     <p>
       {{#if grocery.quantity}}
         {{grocery.quantity}}
@@ -20,7 +19,7 @@
         No quantity provided.
       {{/if}}
     </p>
-    <h6>Price:</h6>
+    <h5>Price:</h5>
     <p>
       {{#if grocery.price}}
         ${{grocery.price}}
@@ -28,16 +27,15 @@
         No price provided.
       {{/if}}
     </p>
-    <h6>Note:</h6>
+    <h5>Note:</h5>
     <p>
       {{#if grocery.notes}}
         {{grocery.notes}}
-      {{else}}
-        No note provided.
       {{/if}}
     </p>
-    <button class="btn btn-warning update-grocery" type="button" data-toggle="modal" data-target="#updategroceryModal" data-id="{{grocery.id}}">Update</button>
-    <button class="btn btn-danger delete-grocery" data-id="{{grocery.id}}">Delete</button>
+    <div class="updateButtonDivn row justify-content-center">
+      <button class="btn btn-warning update-grocery mr-2" type="button" data-toggle="modal" data-target="#updategroceryModal" data-id="{{grocery.id}}">Update</button>
+      <button class="btn btn-danger delete-grocery ml-2" data-id="{{grocery.id}}">Delete</button>
+    </div>
   </section>
-</main>
 {{/each}}

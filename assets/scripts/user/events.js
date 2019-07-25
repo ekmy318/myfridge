@@ -7,12 +7,6 @@ const groceryApi = require('../grocery/api')
 const groceryUi = require('../grocery/ui')
 const store = require('../store')
 
-const clear = () => {
-  $('.user-message').text('')
-  $('.password-message').text('')
-  $('.new-grocery-message').text('')
-}
-
 const onSignUp = event => {
   event.preventDefault()
   const form = event.target
@@ -70,6 +64,16 @@ const onSignOut = () => {
   store.user = undefined
 }
 
+const formAllReset = event => {
+  $('form').trigger('reset')
+}
+
+const clear = () => {
+  $('.user-message').text('')
+  $('.password-message').text('')
+  $('.new-grocery-message').text('')
+}
+
 const addHandlers = () => {
   $('html').on('submit', '#sign-in', onSignIn)
   $('html').on('submit', '#sign-up', onSignUp)
@@ -78,6 +82,8 @@ const addHandlers = () => {
   $('html').on('click', '#pwchange', getEmail)
   $('html').on('click', '#sign-out', onSignOut)
   $('html').on('click', '.dropdown', clear)
+  $('html').on('click', '.dropdown', formAllReset)
+  $('html').on('click', '.dropdown', getEmail)
 }
 
 module.exports = {
