@@ -61,7 +61,6 @@ const onSignOut = () => {
   api.signOut()
     .then(ui.signOutSuccess)
     .catch(ui.signOutFailure)
-  store.user = undefined
 }
 
 const formAllReset = event => {
