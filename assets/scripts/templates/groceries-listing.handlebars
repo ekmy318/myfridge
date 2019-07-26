@@ -1,42 +1,48 @@
 {{#each groceries as |grocery| }}
-  <section data-id="{{grocery.id}}" class="row justify-content-center">
-    <h2 class="col">
-      {{grocery.name}}
-    </h2>
-    <div class="w-100"></div>
-    <h6 class="col-6 my-1 key">Expiration Date</h6>
-    <h6 class="col-6 my-1 value">
-      {{#if grocery.date_format}}
-      {{grocery.date_format}}
-      {{else}}
-      No date provided
-      {{/if}}
-    </h6>
-    <div class="w-100"></div>
-    <h6 class="col-6 my-1 key">Days Left</h6>
-    <h6 class="col-6 my-1 value date">
-      {{#if grocery.days_until}}
-        {{grocery.days_until}}
-      {{/if}}
-    </h6>
-    <div class="w-100"></div>
-    <h6 class="col-6 my-1 key">Quantity</h6>
-    <h6 class="col-6 my-1 value">
-      {{#if grocery.quantity}}
-        {{grocery.quantity}}
-      {{else}}
-        No quantity provided
-      {{/if}}
-    </h6>
-    <div class="w-100"></div>
-    <h6 class="col-6 my-1 key">Price</h6>
-    <h6 class="col-6 my-1 value">
-      {{#if grocery.price}}
-        ${{grocery.price}}
-      {{else}}
-        No price provided
-      {{/if}}
-    </h6>
+<section data-id="{{grocery.id}}" class="justify-content-center">
+<table class="table">
+  <tbody>
+    <h2>{{grocery.name}}</h2>
+    <tr>
+      <td>Expiration Date</td>
+      <td>
+        {{#if grocery.date_format}}
+        {{grocery.date_format}}
+        {{else}}
+        No date provided
+        {{/if}}
+      </td>
+    </tr>
+    <tr>
+      <td>Days Left</td>
+      <td>
+        {{#if grocery.days_until}}
+          {{grocery.days_until}}
+        {{/if}}
+      </td>
+    </tr>
+    <tr>
+      <td>Quantity</td>
+      <td>
+        {{#if grocery.quantity}}
+          {{grocery.quantity}}
+        {{else}}
+          No quantity provided
+        {{/if}}
+      </td>
+    </tr>
+    <tr>
+      <td>Price</td>
+      <td>
+        {{#if grocery.price}}
+          ${{grocery.price}}
+        {{else}}
+          No price provided
+        {{/if}}
+      </td>
+    </tr>
+  </tbody>
+</table>
     <div class="w-100"></div>
     <h6 class="col key notes">Notes</h6>
     <div class="w-100"></div>
@@ -49,8 +55,8 @@
     </p>
     <div class="w-100"></div>
     <div class="row justify-content-center">
-      <button class="col btn btn-warning update-grocery mr-2" type="button" data-toggle="modal" data-target="#updategroceryModal" data-id="{{grocery.id}}">Update</button>
-      <button class="col btn btn-danger delete-grocery ml-2" data-id="{{grocery.id}}">Delete</button>
+      <button class="col btn btn-warning update-grocery" type="button" data-toggle="modal" data-target="#updategroceryModal" data-id="{{grocery.id}}">Update</button>
+      <button class="col btn btn-danger delete-grocery" data-id="{{grocery.id}}">Delete</button>
     </div>
   </section>
 {{/each}}
