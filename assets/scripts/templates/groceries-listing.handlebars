@@ -4,24 +4,24 @@
       {{grocery.name}}
     </h2>
     <div class="w-100"></div>
-    <h6 class="col-6 key">Expiration Date</h6>
-    <h6 class="col-6 value">
-      {{#if grocery.expiration_date}}
-      {{grocery.expiration_date}}
+    <h6 class="col-6 my-1 key">Expiration Date</h6>
+    <h6 class="col-6 my-1 value">
+      {{#if grocery.date_format}}
+      {{grocery.date_format}}
       {{else}}
       No date provided
       {{/if}}
     </h6>
     <div class="w-100"></div>
-    <h6 class="col-6 key">Days left</h6>
-    <h6 class="col-6 value">
+    <h6 class="col-6 my-1 key">Days Left</h6>
+    <h6 class="col-6 my-1 value date">
       {{#if grocery.days_until}}
         {{grocery.days_until}}
       {{/if}}
     </h6>
     <div class="w-100"></div>
-    <h6 class="col-6 key">Quantity</h6>
-    <h6 class="col-6 value">
+    <h6 class="col-6 my-1 key">Quantity</h6>
+    <h6 class="col-6 my-1 value">
       {{#if grocery.quantity}}
         {{grocery.quantity}}
       {{else}}
@@ -29,8 +29,8 @@
       {{/if}}
     </h6>
     <div class="w-100"></div>
-    <h6 class="col-6 key">Price</h6>
-    <h6 class="col-6 value">
+    <h6 class="col-6 my-1 key">Price</h6>
+    <h6 class="col-6 my-1 value">
       {{#if grocery.price}}
         ${{grocery.price}}
       {{else}}
@@ -38,11 +38,13 @@
       {{/if}}
     </h6>
     <div class="w-100"></div>
-    <h5 class="col key note">Notes</h5>
+    <h6 class="col key notes">Notes</h6>
     <div class="w-100"></div>
-    <p class="col notes value">
+    <p class="col value">
       {{#if grocery.notes}}
         {{grocery.notes}}
+      {{else}}
+          No note provided
       {{/if}}
     </p>
     <div class="w-100"></div>

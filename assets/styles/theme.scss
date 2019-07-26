@@ -41,7 +41,9 @@ body {
       }
     }
     h2 {
-      margin-bottom: 1.5rem;
+      border-bottom: 1px solid #000;
+      margin-bottom: 1rem;
+      padding-bottom: 10px;
       text-align: center;
       text-transform: capitalize;
     }
@@ -53,14 +55,15 @@ body {
     }
 
     .key {
-      font-weight: bold;
+      // font-weight: bold;
       padding-right: 0;
       text-align: center;
     }
 
-    .note {
-      margin-top: 1rem;
+    .notes {
+      margin-top: 0.5rem;
       text-align: center;
+      text-decoration: underline;
     }
 
     .value {
@@ -70,8 +73,29 @@ body {
   }
 }
 
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: auto;
+}
+
+.fridgeface {
+  height: 360px;
+  width: 217px;
+  object-position: center;
+  object-fit: scale-down;
+  padding: 0;
+}
+
+.fridgefacep {
+  text-align: center;
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
 .change-password-model {
-  align-content: right
+  align-content: right;
 }
 
 .container-fluid {
@@ -80,6 +104,10 @@ body {
   padding: 1em;
   @extend .bg-dark;
   @extend .fixed-top;
+}
+
+.failure {
+  color: #F00;
 }
 
 .footer {
@@ -96,27 +124,8 @@ body {
   vertical-align: top;
 }
 
-.user-message {
-  text-align: right;
-}
-
-.success {
-  color: #080;
-}
-
-.failure {
-  color: #F00;
-}
-
 .hide {
   display: none;
-}
-
-.center {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: auto;
 }
 
 .left_h2 {
@@ -129,7 +138,16 @@ body {
   margin-left: 25px;
 }
 
+.nogroceries {
+  margin-top: 100px;
+}
+
+.success {
+  color: #080
+}
+
 .user-message {
-  height: 30px;
   font-size: 1.25em;
+  height: 30px;
+  text-align: right;
 }

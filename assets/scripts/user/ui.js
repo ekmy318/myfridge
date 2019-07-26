@@ -62,7 +62,9 @@ const changePasswordFailure = () => {
 }
 
 const signOutSuccess = () => {
-  $('body').html(showHomeTemplate)
+  $('.main-body').html(showHomeTemplate)
+  $('#sign-in').removeClass('hide')
+  $('.dropdown').addClass('hide')
   successMessage('See you again soon!')
 }
 

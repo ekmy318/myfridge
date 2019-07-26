@@ -74,6 +74,10 @@ const clear = () => {
   $('.new-grocery-message').text('')
 }
 
+const updateclear = () => {
+  $('.update-grocery-message').text('')
+}
+
 const addHandlers = () => {
   $('html').on('submit', '#sign-in', onSignIn)
   $('html').on('submit', '#sign-up', onSignUp)
@@ -82,6 +86,7 @@ const addHandlers = () => {
   $('html').on('click', '#pwchange', getEmail)
   $('html').on('click', '#sign-out', onSignOut)
   $('html').on('click', '.dropdown', clear)
+  $('html').on('click', '.update-grocery', updateclear)
   $('html').on('click', '.dropdown', formAllReset)
   $('html').on('click', '.dropdown', getEmail)
 }

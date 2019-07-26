@@ -1,14 +1,18 @@
 'use strict'
 
 const showGroceriesTemplate = require('../templates/groceries-listing.handlebars')
+const noGroceriesTemplate = require('../templates/nogroceries.handlebars')
 const store = require('../store')
 
 const getGroceriesSuccess = (data) => {
-  const showGroceriesHtml = showGroceriesTemplate({ groceries: data.groceries })
-  store.data = data
-  $('.main-body').html(showGroceriesHtml)
   if (data.groceries.length === 0) {
-    $('.user-message').text('No groceries! Add some!')
+    const noGroceriesHtml = noGroceriesTemplate({ groceries: data.groceries })
+    store.data = data
+    $('.main-body').html(noGroceriesHtml)
+  } else {
+    const showGroceriesHtml = showGroceriesTemplate({ groceries: data.groceries })
+    store.data = data
+    $('.main-body').html(showGroceriesHtml)
   }
 }
 
