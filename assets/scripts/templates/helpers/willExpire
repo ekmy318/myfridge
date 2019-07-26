@@ -1,0 +1,11 @@
+const willExpire = (num) => {
+  if (num === 'Expires tomorrow!') {
+    return true
+  } else if (num === 'Expires today!') {
+    return true
+  } else {
+    return false
+  }
+}
+
+module.exports = willExpire

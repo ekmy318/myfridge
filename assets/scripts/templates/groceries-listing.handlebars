@@ -1,5 +1,8 @@
 {{#each groceries as |grocery| }}
-<section data-id="{{grocery.id}}" class="justify-content-center">
+<section data-id="{{grocery.id}}" class="justify-content-center
+{{#if (isExpired grocery.days_until)}}red{{/if}}
+{{#if (willExpire grocery.days_until)}}yellow{{/if}}
+">
 <table class="table">
   <tbody>
     <h2>{{grocery.name}}</h2>

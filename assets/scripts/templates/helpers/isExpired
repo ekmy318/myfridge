@@ -1,0 +1,9 @@
+const isExpired = (num) => {
+  if (num === 'Expired!') {
+    return true
+  } else {
+    return false
+  }
+}
+
+module.exports = isExpired
