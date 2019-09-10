@@ -17,10 +17,11 @@ const getGroceriesSuccess = (data) => {
 }
 
 const createGroceriesSuccess = (data) => {
-  $('.new-grocery-message').text('Added Grocery!')
-  $('.new-grocery-message').removeClass('failure')
-  $('.new-grocery-message').addClass('success')
+  $('.user-message').text('Added Grocery!')
+  $('.user-message').removeClass('failure')
+  $('.user-message').addClass('success')
   $('form').trigger('reset')
+  $('#newgroceryModal').modal('hide')
 }
 
 const createGroceriesFailure = () => {
@@ -43,10 +44,17 @@ const deleteGroceriesFailure = () => {
 }
 
 const updateGroceriesSuccess = () => {
-  $('.update-grocery-message').text('Updated Grocery!')
-  $('.update-grocery-message').removeClass('failure')
-  $('.update-grocery-message').addClass('success')
+  $('.user-message').text('Updated Grocery!')
+  $('.user-message').removeClass('failure')
+  $('.user-message').addClass('success')
   $('form').trigger('reset')
+  $('#updategroceryModal').modal('hide')
+}
+
+const updateGroceriesFailure = () => {
+  $('.update-grocery-message').text('Failed to update. Please try again.')
+  $('.update-grocery-message').removeClass('success')
+  $('.update-grocery-message').addClass('failure')
 }
 
 module.exports = {
@@ -55,5 +63,6 @@ module.exports = {
   createGroceriesFailure,
   deleteGrocerySuccess,
   deleteGroceriesFailure,
-  updateGroceriesSuccess
+  updateGroceriesSuccess,
+  updateGroceriesFailure
 }

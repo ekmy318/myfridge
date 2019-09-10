@@ -33,7 +33,7 @@ const onUpdateGrocery = (event) => {
     .then(ui.updateGroceriesSuccess)
     .then(api.getGroceries)
     .then(ui.getGroceriesSuccess)
-    .catch(ui.createGroceriesFailure)
+    .catch(ui.updateGroceriesFailure)
 }
 
 // data id is available on handlebar button but the form is on HTML. created separate function to store data id.

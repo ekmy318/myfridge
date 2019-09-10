@@ -45,11 +45,12 @@ const signInFailure = () => {
 
 const changePasswordSuccess = () => {
   $('#staticEmail').val(store.user.email)
-  $('.password-message').text('Password changed successfully!')
-  $('.password-message').removeClass('failure')
-  $('.password-message').addClass('success')
+  $('.user-message').text('Password changed successfully!')
+  $('.user-message').removeClass('failure')
+  $('.user-message').addClass('success')
   $('form').trigger('reset')
   $('#staticEmail').val(store.user.email)
+  $('#passwordModal').modal('hide')
 }
 
 const changePasswordFailure = () => {
